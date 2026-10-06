@@ -1,29 +1,31 @@
 {
-	"routes": [
-		{
-			"route": "/.auth/login/github",
-			"statusCode": 404
-		},
-		{
-			"route": "/*",
-			"allowedRoles": ["authenticated"]
-		}
-	],
-	"responseOverrides": {
-		"401": {
-			"statusCode": 302,
-			"redirect": "/.auth/login/aad"
-		}
-	},
-	"auth": {
-		"identityProviders": {
-			"azureActiveDirectory": {
-				"registration": {
-					"openIdIssuer": "https://login.microsoftonline.com/9dde3673-9507-4c97-aa42-83f17f99fcdf/v2.0",
-					"clientIdSettingName": "3581d45e-7d36-4cf4-b16d-888c53114de3",
-					"clientSecretSettingName": "Jfl8Q~72k1LlcyE5RGsPnIxAhW_xPXO_hxA4fa.e"
-				}
-			}
-		}
-	}
+  "routes": [
+    {
+      "route": "/.auth/login/github",
+      "statusCode": 404
+    },
+    {
+      "route": "/*",
+      "allowedRoles": [
+        "authenticated"
+      ]
+    }
+  ],
+  "responseOverrides": {
+    "401": {
+      "statusCode": 302,
+      "redirect": "/.auth/login/aad"
+    }
+  },
+  "auth": {
+    "identityProviders": {
+      "azureActiveDirectory": {
+        "registration": {
+          "openIdIssuer": "https://login.microsoftonline.com/9dde3673-9507-4c97-aa42-83f17f99fcdf/v2.0",
+          "clientIdSettingName": "AAD_CLIENT_ID",
+          "clientSecretSettingName": "AAD_CLIENT_SECRET"
+        }
+      }
+    }
+  }
 }
